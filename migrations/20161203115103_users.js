@@ -1,7 +1,7 @@
 'use strict';
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('users', function(table) {
-    table.increments().unique();
+    table.increments().primary();
     table.string('first_name').notNullable().defaultTo('');
     table.string('last_name').notNullable().defaultTo('');
     table.string('email').notNullable().unique();
